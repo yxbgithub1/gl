@@ -1,0 +1,76 @@
+@import '../../assets/sass/global';
+.goods-details {
+    padding-bottom: #{$spacing + .8}rem;
+    .box {
+        @extend %br-cells-top;
+        @extend %br-cells-bottom;
+        padding:#{$spacing}rem;
+        margin-bottom:#{$spacing}rem;
+        background-color: _palette(box-bg);
+        &>div {
+            margin-bottom:#{$spacing}rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .remark {
+        color: _palette(darken-color);
+        
+    }
+}
+
+.goods-info {
+    .img {
+        @extend %relative;
+        &:after{
+            content: "";
+            bottom: 0;
+            left: 0;
+            top: 0;
+            right: 0;
+            height:100%;
+            width:100%;
+            @extend %absolute;
+        }
+        margin:0 auto;
+        width:4rem; 
+        height:4rem;
+        text-align: center;
+    }
+    img{
+        width:100%;
+        height: 100%;
+    }
+}
+
+.goods-title {
+    max-height: .65rem;
+    text-align: left;
+    @include fontSize(2);
+    @extend %ellipsis-multi;
+}
+
+.goods-subtitle {
+    @extend %ellipsis-multi;
+    color: lighten(_palette(stress), 25%);
+    &+div {
+        color: _palette(stress);
+        span {
+            margin-right: #{$spacing*2}rem;
+        }
+    }
+}
+
+.goods-params {
+    width: 100%;
+    tr {
+        background-color: #eceff2;
+        &:nth-child(even) {
+            background-color: lighten(#eceff2, 3%);
+        }
+    }
+    td {
+        padding:#{$spacing}rem;
+    }
+}

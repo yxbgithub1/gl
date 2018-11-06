@@ -1,0 +1,130 @@
+@import '../../assets/sass/global';
+.success {
+    text-align: center;
+    i {
+        color: _palette(btn-bg);
+        margin: 1.3rem 0 .3rem 0;
+        @include fontSize(200);
+    }
+    span {
+        @include fontSize(12);
+    }
+    i,
+    span {
+        @extend %block;
+    }
+}
+
+.success-buttons {
+    padding: 1.05rem .55rem 0 .55rem;
+    a {
+        &:last-child {
+            margin-top: .4rem;
+        }
+    }
+}
+
+.details {
+    .img {
+        height: 2rem;
+        background-size: 100% 2rem;
+    }
+    ._01 {
+        background-image: url(../../assets/imgs/details_01.jpg);
+    }
+    ._02 {
+        background-image: url(../../assets/imgs/details_02.jpg);
+    }
+    ._03 {
+        background-image: url(../../assets/imgs/details_03.jpg);
+    }
+    .box {
+        line-height: .5rem;
+        @extend %br-cells-top;
+        @extend %br-cells-bottom;
+        padding:#{$spacing}rem;
+        margin-bottom:#{$spacing}rem;
+        background-color: _palette(box-bg);
+        &:first-child {
+            &:after {
+                display: none;
+            }
+        }
+    }
+    .top {
+        @extend %flexbox;
+        margin-bottom: .2rem;
+        justify-content: space-between;
+        -webkit-justify-content: space-between;
+        &+* {
+            color: _palette(darken-color);
+        }
+    }
+    a[href] {
+        color: _palette(btn-bg);
+    }
+    .darken {
+        color: _palette(darken-color);
+    }
+    .remark {
+        text-align: center;
+        @include fontSize(-3);
+        padding:#{$spacing}rem;
+        padding-top: 0;
+    }
+    .tel {
+        span {
+            padding-left: .2rem;
+        }
+        &+* {
+            line-height: .3rem;
+        }
+    }
+    .details-stress {
+        color: _palette(stress);
+    }
+    .reset {
+        margin: 0;
+        &:after {
+            display: none;
+        }
+        & .top {
+            margin: inherit;
+        }
+    }
+    .address {
+        @extend %relative;
+        span {
+            margin-left: #{$spacing*2}rem;
+        }
+        i{
+            right:0;
+            top:35%;
+            @extend %absolute;
+        }
+    }
+    .fa-angle-right {
+        @include fontSize(10);
+    }
+}
+
+.details-order {
+    @extend %vertical-center;
+    &>div {
+        line-height: .35rem;
+        width: 72%;
+    }
+    .title {
+        max-height: .65rem;
+        margin-bottom: .2rem;
+        text-align: left;
+        @extend %ellipsis-multi;
+    }
+}
+
+.sum {
+    b {
+        width: 100%;
+        text-align: right;
+    }
+}

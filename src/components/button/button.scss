@@ -1,0 +1,45 @@
+@import '../../assets/sass/global';
+.btn {
+    border: 0;
+    margin: 0;
+    outline: none;
+    height: .8rem;
+    color: #fff;
+    display: block;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    line-height: .8rem;
+    appearance: none;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    @include fontSize(4);
+    background-color: _palette(btn-bg);
+    &:active {
+        background-color: darken(_palette(btn-bg), 10%);
+    }
+}
+
+.default {
+    color: #333;
+    background-color: transparent;
+    border: solid 1px _palette(border-bg);
+    &:active {
+        color: _palette(btn-bg);
+        background-color: transparent;
+        border-color: darken(_palette(border-bg), 5%);
+    }
+}
+
+.fixed-button {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    @extend %br-cells-top;
+    position: absolute !important;
+    padding:#{$spacing}rem;
+    background-color: #fff;
+}

@@ -1,0 +1,35 @@
+@import '../../assets/sass/global';
+form {
+    width: 100%;
+    background-color: _palette(box-bg);
+    &>div {
+        padding:0 #{$spacing}rem;
+        height: #{$spacing*3.5}rem;
+        line-height: #{$spacing*3.5}rem;
+        @extend %br-cells-bottom;
+        &:first-child {
+            &>label {
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .area {
+        span {
+            height: .65rem;
+            overflow: hidden;
+            padding-left: .24rem;
+            color: lighten(#999, 4%);
+            width: 78%;
+        }
+        i {
+            right: .53rem;
+            height: #{$spacing*3.5}rem;
+            line-height: #{$spacing*3.5}rem;
+            @extend %absolute;
+            @extend %angle;
+        }
+    }
+    .lacunae {
+        color: #333!important;
+    }
+}

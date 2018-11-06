@@ -1,0 +1,70 @@
+@import '../../assets/sass/global';
+ul {
+    padding-bottom: #{$spacing*2 + .8}rem;
+}
+
+li {
+    padding:#{$spacing}rem;
+    margin-bottom:#{$spacing}rem;
+    background-color: _palette(box-bg);
+    @extend %br-cells-top;
+    @extend %br-cells-bottom;
+    &>div {
+        @extend %clearfix;
+        margin-bottom: inherit;
+        &:last-child {
+            margin: 0;
+        }
+    }
+    // &:active {
+    //     background-color: darken(_palette(box-bg), 5%);
+    // }
+    .fa-check-circle-o,
+    .fa-circle-thin{
+        left: .01rem;
+        top: .02rem;
+        @include fontSize(4);
+    }
+    .fa-check-circle-o {
+        color: _palette(ok-bg);
+    }
+    .fa-circle-thin{
+        color: _palette(icon-bg);
+    }
+    .address{
+        text-align: justify;
+    }
+}
+
+.selected {
+    //background-color: darken(_palette(box-bg), 5%);
+    .fa-check-circle-o {
+        display: inline-block;
+    }
+}
+
+.name {
+    width: 1.7rem;
+}
+
+.use {
+    & section {
+        @extend %ft-l;
+        &:last-child {
+            @extend %ft-r;
+        }
+    }
+    a {
+        margin-left: #{$spacing*2}rem;
+    }
+    i {
+        padding-right: .05rem;
+    }
+    .fa-pencil-square-o {
+        top: .01rem;
+    }
+}
+
+.delete {
+    color: _palette(warning);
+}

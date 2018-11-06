@@ -1,0 +1,129 @@
+@import './libs/vars';
+@import './libs/mixins';
+@import './libs/layout';
+@import './libs/function';
+$spacing:.3;
+html,
+body {
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    //font-size:62.5%;
+    overflow: hidden;
+}
+
+body {
+    font-size:#{_font(size)}rem;
+    font-family: _font(family);
+    overflow: hidden;
+    color: #3d4145;
+    @extend %absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: _palette(bg);
+}
+
+
+/*禁止保存拷贝*/
+
+img {
+    -webkit-touch-callout: none;
+    width: 100%;
+}
+
+
+/*不高亮*/
+
+a,
+textarea,
+input[type=text],
+input[type=tel],
+input[type=button] {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+
+/*清除输入框的内阴影*/
+
+input,
+textarea {
+    -webkit-appearance: none;
+}
+
+
+/*禁止复制*/
+
+img,
+button,
+input[type=button],
+a {
+    -webkit-user-select: none;
+}
+
+label,
+a,
+span,
+b,
+i {
+    display: inline-block;
+}
+
+i {
+    @extend %relative;
+}
+
+input,
+select,
+textarea,
+button {
+    border: 0;
+    outline: 0;
+    color: #3d4145;
+    font-size:#{_font(size)}rem;
+    font-family: _font(family);
+}
+
+%br-cells-bottom {
+    @extend %relative;
+    &:after {
+        left: 0;
+        bottom: 0;
+        right: 0;
+        content: " ";
+        height: 1px;
+        @extend %absolute;
+        color: _palette(border-bg);
+        border-bottom: 1px solid _palette(border-bg);
+        -webkit-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+
+%br-cells-top {
+    @extend %relative;
+    &:before {
+        content: "";
+        height: 1px;
+        @extend %absolute;
+        color: _palette(border-bg);
+        left: 0;
+        top: 0;
+        right: 0;
+        border-top: 1px solid _palette(border-bg);
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        -webkit-transform: scaleY(0.5);
+        transform: scaleY(0.5);
+    }
+}
+
+%angle {
+    @include fontSize(10);
+    color: #C8C8CD;
+}

@@ -1,0 +1,121 @@
+@import '../../assets/sass/global';
+.modal {
+    width: 5.4rem;
+    z-index: 20;
+    text-align: center;
+    border-radius: 6px;
+    @extend %position-center;
+    transition-duration: 300ms;
+    transition-property: transform, opacity;
+    background-color: _palette(box-bg);
+    &.modal-enter,
+    &.modal-leave-active {
+        opacity: 0;
+        z-index: 20-1;
+        transform: translate3d(-50%, -50%, 0) scale(0.815);
+    }
+}
+
+.modal-inner {
+    padding:#{$spacing * 1.5}rem;
+    @extend %br-cells-bottom;
+}
+
+.modal-title {
+    @include fontSize(2);
+    font-weight: 600;
+    +.modal-text {
+        margin-top: #{$spacing * 1.5}rem;
+    }
+}
+
+.modal-buttons {
+    @extend %flexbox;
+    text-align: center;
+}
+
+.modal-button {
+    width: 100%;
+    @extend %relative;
+    height: .8rem;
+    line-height: .8rem;
+    color: _palette(ok-bg);
+    @include hairline('right', _palette(border-bg));
+    &:last-child {
+        &:after {
+            display: none;
+        }
+    }
+}
+
+.modal-cancel-button {
+    color: _palette(darken-color);
+}
+
+.prompt-row {
+    margin-top: .2rem;
+    input {
+        padding: 0 .24rem;
+        width: 55%;
+    }
+    button{
+        width: 40%;
+        padding: 0;
+        position: relative;
+        @extend %border-radius3;
+        background: transparent;
+        border: solid 1px _palette(btn-bg);
+        // &:active{
+        //     border: solid 1px darken(_palette(btn-bg), 10%);
+        // }
+    }
+    img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+    }
+    input[type=image]{
+        width:40%;
+        background-size: 100%;
+    }
+    a{
+        width:40%;
+        overflow: hidden;
+        @extend %border-radius3;
+    }
+    .disabled{
+        color: #999;
+        background: _palette(border-bg);
+        border: solid 1px _palette(border-bg);
+    }
+}
+.auth-code{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+}
+.error{
+    text-align: left;
+    color: _palette(warning);
+    @include fontSize(-2);
+}
+
+.prompt-row input,
+.prompt-input {
+    height: .8rem;
+    line-height: .8rem;
+    @extend %border-radius3;
+    border: solid 1px _palette(border-bg);
+}
+.prompt-input{
+    width:100% !important;
+    color: darken(_palette(border-bg),20%);
+    background-color:_palette(border-bg); 
+}
+.message {
+    color: _palette(stress);
+}

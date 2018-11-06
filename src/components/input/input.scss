@@ -1,0 +1,63 @@
+@import '../../assets/sass/global';
+.box {
+    @extend %relative;
+    input {
+        width: 70%;
+        padding: .06rem .24rem;
+    }
+    label {
+        top: .02rem;
+        @extend %relative;
+    }
+}
+
+.warning {
+    color: _palette(warning);
+    input {
+        color: inherit;
+    }
+}
+
+.fa {
+    @include fontSize(2);
+}
+
+.fa-plus-circle {
+    color: darken(_palette(border-bg), 20%);
+    transform: rotate(45deg);
+}
+
+.fa-exclamation-circle {
+    @include fontSize(8);
+    margin-left: .2rem;
+}
+
+.icons {
+    right: .1rem;
+    @extend %absolute;
+    margin-top: -.04rem;
+    @extend %vertical-center;
+}
+
+.spacing {
+    letter-spacing: 3.8px;
+    &+* {
+        left: -2px;
+        @extend %relative;
+    }
+}
+
+.visibile {
+    display: none!important;
+}
+
+.prompt-input {
+    text-align: left;
+    input {
+        left: 0;
+        width: auto;
+    }
+    .icons {
+        right: .1rem;
+    }
+}

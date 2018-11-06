@@ -1,0 +1,59 @@
+@import '../../assets/sass/global';
+
+.content-padded{
+    @extend %mg-auto;
+    //padding:0 #{$spacing}rem;
+}
+
+#list{
+    @extend %clearfix;
+    @extend %relative;
+    a{
+        width:50%;
+        @extend %ft-l;
+        padding-top: 0;
+        text-align:justify;
+        padding:#{$spacing}rem #{$spacing - .1}rem;
+        @extend %br-cells-top;
+        background-color: _palette(box-bg);
+        @include hairline(right,_palette(border-bg));
+        &:nth-child(even){
+            &:after{
+                display: none;
+            }
+        }
+        & > *{
+            display: block;
+        }
+        // &:active{
+        //     background-color: darken(_palette(box-bg), 5%)
+        // }
+    }
+    b{
+        width:3rem; 
+        height: 3rem;
+        margin: 0 auto;
+    }
+    strong{
+        width:100%;
+        font-weight: 300;
+        @include fontSize(-4);
+        height: .61rem;
+        margin: .2rem 0;
+        overflow: hidden;
+        @extend %ellipsis-multi;
+    }
+}
+.number{
+    @extend %clearfix;
+    @include fontSize(-2);
+    label{
+        color: _palette(warning)
+    }
+    span{
+        @extend %ft-r;
+        margin-top: .03rem;
+        //@include fontSize(-2);
+        color: _palette(darken-color);
+    }
+}
